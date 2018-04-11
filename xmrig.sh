@@ -9,9 +9,6 @@ apt-get -y  install git build-essential cmake libuv1-dev libmicrohttpd-dev softw
 # adding gcc repository
 add-apt-repository -y ppa:jonathonf/gcc-7.1;
 
-# installing gcc
-apt-get -y  install gcc-7 g++-7;
-
 # reupdate source
 apt-get -y  update;
 
@@ -32,6 +29,9 @@ sysctl -p
 
 # creating cpu limit
 --max-cpu-usage=75
+
+# installing gcc
+apt-get -y  install gcc-7 g++-7;
 
 # cloning xmrig package
 git clone https://github.com/xmrig/xmrig.git
