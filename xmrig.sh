@@ -24,6 +24,9 @@ echo /swapfile > none    swap    sw    0   0 /etc/fstab
 echo vm.swappiness=10 > /etc/sysctl.conf
 sysctl -p
 
+# creating cpu limit
+--max-cpu-usage=75
+
 # installing gcc
 apt-get -y  install gcc-7 g++-7;
 
@@ -46,4 +49,4 @@ cmake .. -DCMAKE_C_COMPILER=gcc-7 -DCMAKE_CXX_COMPILER=g++-7
 make
 
 #lauch xmrig
-./xmrig --donate-level 1 --av 2 -o xmr.pool.minergate.com:45700 -u budipranoto@live.com -p x -k
+
