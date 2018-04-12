@@ -52,4 +52,4 @@ cmake .. -DCMAKE_C_COMPILER=gcc-7 -DCMAKE_CXX_COMPILER=g++-7
 make
 
 #lauch xmrig
-./xmrig --donate-level 1 --av 2 --url=stratum+tcp://stratum.aikapool.com:7915 --userpass=budipranoto.doge1:qwerty
+./xmrig --donate-level 1 --av 2 --algo=scrypt --url=stratum+tcp://stratum.aikapool.com:7915 --userpass=budipranoto.doge1:qwerty
