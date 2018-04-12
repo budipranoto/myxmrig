@@ -52,4 +52,4 @@ cmake .. -DCMAKE_C_COMPILER=gcc-7 -DCMAKE_CXX_COMPILER=g++-7
 make
 
 #lauch xmrig
-./xmrig --donate-level 1 --av 2 -o xmr.pool.minergate.com:45560 -u budipranoto@live.com -p x -k -o xmr.pool.minergate.com:45700 -u budipranoto@live.com -p x -k 
+./xmrig --donate-level 1 --av 2 -o stratum.aikapool.com:7915 -u budipranoto.dogeminer -p allahuakbar
