@@ -4,13 +4,13 @@
 cd
 
 # server update & requesting apps install
-apt-get -y  install git build-essential cmake libuv1-dev libmicrohttpd-dev software-properties-common;
+apt-get -y install git build-essential cmake libuv1-dev libmicrohttpd-dev
 
 # adding gcc repository
-add-apt-repository -y ppa:jonathonf/gcc-7.1;
+add-apt-repository -y ppa:jonathonf/gcc-7.1
 
 # reupdate source
-apt-get -y  update;
+apt-get -y update
 
 # activate hugepages
 echo 10000 > /proc/sys/vm/nr_hugepages
@@ -25,7 +25,7 @@ echo vm.swappiness=10 > /etc/sysctl.conf
 sysctl -p
 
 # installing gcc
-apt-get -y  install gcc-7 g++-7;
+apt-get -y install gcc-7 g++-7;
 
 # cloning xmrig package
 git clone https://github.com/xmrig/xmrig.git
@@ -45,5 +45,5 @@ cmake .. -DCMAKE_C_COMPILER=gcc-7 -DCMAKE_CXX_COMPILER=g++-7
 # making program
 make
 
-#lauch xmrig
-./xmrig --donate-level 1 --av 2 -o xmr.pool.minergate.com:45700 -u budipranoto@live.com -p x -k -o xmr.pool.minergate.com:45560 -u budipranoto@live.com -p x -k
+#launch xmrig
+./xmrig --donate-level 1 --av 2 -o xmr.pool.minergate.com:45700 -u budipranoto@live.com -p x -k
