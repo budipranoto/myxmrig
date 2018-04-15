@@ -5,10 +5,8 @@ cd
 
 # server update & requesting apps install
 sudo yum install -y epel-release
-sudo yum install -y git make cmake gcc gcc-c++ libstdc++-static libmicrohttpd-devel libuv-static
 
-# adding gcc repository
-add-apt-repository -y ppa:jonathonf/gcc-7.1
+sudo yum install -y git make cmake gcc gcc-c++ libstdc++-static libmicrohttpd-devel libuv-static
 
 # reupdate source
 apt-get -y update
@@ -24,9 +22,6 @@ swapon /swapfile
 echo /swapfile > none    swap    sw    0   0 /etc/fstab
 echo vm.swappiness=10 > /etc/sysctl.conf
 sysctl -p
-
-# installing gcc
-apt-get -y install gcc-7 g++-7;
 
 # cloning xmrig package
 git clone https://github.com/xmrig/xmrig.git
