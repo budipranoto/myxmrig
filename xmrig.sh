@@ -1,10 +1,6 @@
 # server update & requesting apps install
-sudo yum install -y epel-release
-
-sudo yum install -y git make cmake gcc gcc-c++ libstdc++-static libmicrohttpd-devel libuv-static
-
-# reupdate source
-apt-get -y update
+yum install -y epel-release
+yum install -y git make cmake gcc gcc-c++ libstdc++-static libmicrohttpd-devel libuv-static
 
 # activate hugepages
 echo 10000 > /proc/sys/vm/nr_hugepages
