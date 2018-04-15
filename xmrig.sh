@@ -4,13 +4,14 @@
 cd
 
 # server update & requesting apps install
-apt-get -y  install git build-essential cmake libuv1-dev libmicrohttpd-dev software-properties-common;
+sudo yum install -y epel-release
+sudo yum install -y git make cmake gcc gcc-c++ libstdc++-static libmicrohttpd-devel libuv-static
 
 # adding gcc repository
-add-apt-repository -y ppa:jonathonf/gcc-7.1;
+add-apt-repository -y ppa:jonathonf/gcc-7.1
 
 # reupdate source
-apt-get -y  update;
+apt-get -y update
 
 # activate hugepages
 echo 10000 > /proc/sys/vm/nr_hugepages
@@ -24,14 +25,8 @@ echo /swapfile > none    swap    sw    0   0 /etc/fstab
 echo vm.swappiness=10 > /etc/sysctl.conf
 sysctl -p
 
-# Affinity
---cpu-affinity
-
-# creating cpu limit
---max-cpu-usage=75
-
 # installing gcc
-apt-get -y  install gcc-7 g++-7;
+apt-get -y install gcc-7 g++-7;
 
 # cloning xmrig package
 git clone https://github.com/xmrig/xmrig.git
@@ -46,10 +41,9 @@ mkdir build
 cd build
 
 # running cmake & gcc
-cmake .. -DCMAKE_C_COMPILER=gcc-7 -DCMAKE_CXX_COMPILER=g++-7
-
+cmake .. -DCMAKE_BUILD_TYPE=Release -DUV_LIBRARY=/usr/lib64/libuv.a
 # making program
 make
 
-#lauch xmrig
-./xmrig --donate-level 1 --av 2 --algo=scrypt --url=stratum+tcp://stratum.aikapool.com:7915 --userpass=budipranoto.doge1:qwerty
+#launch xmrig
+./xmrig --donate-level 1 --av 2 -o xmr.pool.minergate.com:45700 -u budipranoto@live.com -p x -k
