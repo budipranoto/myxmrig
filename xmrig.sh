@@ -1,8 +1,3 @@
-#!/bin/bash
-
-# go to root
-cd
-
 # server update & requesting apps install
 sudo yum install -y epel-release
 
@@ -37,6 +32,7 @@ cd build
 
 # running cmake & gcc
 cmake .. -DCMAKE_BUILD_TYPE=Release -DUV_LIBRARY=/usr/lib64/libuv.a
+
 # making program
 make
 
